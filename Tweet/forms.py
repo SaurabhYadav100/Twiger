@@ -7,6 +7,12 @@ class TweetForm(forms.ModelForm):
     class Meta:
         model=Tweet
         fields=['text', 'photo']
+        widgets = {
+        'text': forms.Textarea(attrs={
+        'class': 'form-control',
+        'placeholder': "Write your message..."
+    }),
+    }
                
         
 class UserRegistrationForm(UserCreationForm):
